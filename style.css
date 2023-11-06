@@ -1,0 +1,230 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.background{
+    overflow: hidden;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom left, #87556f  ,  #65309c, #f2709c, #ff9472, #ffb347);
+    background-size: 300% 300%;
+    animation: moving-color 10s ease-in-out infinite;
+}
+
+@keyframes moving-color{
+    0%{
+        background-position: 0% 50%;
+    }
+    25%{
+        background-position: 50% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+
+div.box{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.container{
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+.heart{
+    width: 5rem;
+    height: 5rem;
+    background-color: red;
+    opacity: 0.6;
+    position: relative;
+    transform: rotate(45deg);
+    animation: pulse 2s linear infinite;
+}
+@keyframes pulse{
+    0% {
+        transform: rotate(45deg) scale(1);
+    }
+    20% {
+        transform: scale(1) rotate(45deg);
+    }
+    40% {
+        transform: scale(1.3) rotate(45deg);
+    }
+    60% {
+        transform: scale(1.3) rotate(45deg);
+    }
+    80% {
+        transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+        transform: scale(1) rotate(45deg);
+    }
+}
+
+.heart::before{
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    content: '';
+    background-color: red;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+.heart::after{
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    content: '';
+    background-color: red;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+div.question{
+    position: relative;
+    width: 80%;
+    height: 30%;
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+div.question::before{
+    content: '';
+    position: absolute;
+    width:110%;
+    height: 50%;
+    background: linear-gradient(#ff9472, #ffb347);
+    animation: animate 4s linear infinite;
+}
+
+div.question span{
+    position: absolute;
+    inset: 5px;
+    background: linear-gradient(to bottom left, #87556f  ,  #65309c, #f2709c, #ff9472, #ffb347);
+    background-size: 500% 500%;
+    animation: moving-color2 10s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes moving-color2{
+    0%{
+        background-position: 0% 50%;
+    }
+    25%{
+        background-position: 50% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    0%{
+        transform: rotate(360deg);
+    }
+}
+
+div.question h1{
+    position: relative;
+    z-index: 2;
+    font-size: 30pt;
+    color:  #e91e63;
+}
+
+div.answer{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+    justify-content: center;
+}
+
+div.ans{
+    cursor: pointer;
+    width: 16%;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 25pt;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+
+    background: repeating-conic-gradient(from var(--a),#ff2770 0%, #ff2770 5%, transparent 5%, transparent 40%, #ff2770 50%);
+    animation: animate2 4s linear infinite;
+}
+
+@property --a{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes animate2{
+    0%{
+        --a: 0deg;
+    }
+    100%{
+        --a: 360deg;
+    }
+}
+
+div.ans::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--a),#45f3ff 0%, #45f3ff 5%, transparent 5%, transparent 40%, #45f3ff 50%);
+    animation: animate2 4s linear infinite;
+    animation-delay: -1s;
+    border-radius: 10px;
+}
+
+div.ans::after{
+    content:'';
+    position: absolute;
+    inset: 5px;
+    background-color: #2d2d39;
+    border-radius: 10px;
+    border: 1px solid #252525;
+}
+
+div.ans span{
+    z-index: 1;
+    font-size: 20pt;
+    color: #ff1563;
+}
+
+div.ans:hover{
+    transform: scale(1.2);
+    transition-delay: 0.1s;
+}
