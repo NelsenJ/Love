@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelector(".yes").addEventListener('click', () =>{
         document.querySelector("h1").innerHTML = "Can you wait for a few seconds?";
-        document.querySelector("h1").style.fontSize ="27pt";
+        document.querySelector("h1").style.fontSize ="23pt";
         document.getElementById("first").style.display = "none";
         document.getElementById("first2").style.display = "none";
         document.getElementById("second").style.display = "flex";
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     document.querySelector(".no").addEventListener('click', () =>{
         document.querySelector("h1").innerHTML = ":( Well Okay Then, Get well soon";
-        document.querySelector("h1").style.fontSize ="27pt";
+        document.querySelector("h1").style.fontSize ="23pt";
         document.querySelector(".answer").style.display = "none";
     })
     document.getElementById("second").addEventListener('click', () => {
