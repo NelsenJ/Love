@@ -228,3 +228,21 @@ div.ans:hover{
     transform: scale(1.2);
     transition-delay: 0.1s;
 }
+div.ans2{
+    display: none;
+}
+
+div.question div{
+    display: none;
+}
+
+div.question div.show{
+    display: flex;
+    position: absolute;
+    right: 52%;
+    top: 65%;
+    font-size: 25pt;
+    justify-content: center;
+    align-items: center;
+    color:   #e91e63;
+}
